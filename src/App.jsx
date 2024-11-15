@@ -1,15 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
+import Sidebar from './components/Sidebar'
+import HomePage from './pages/HomePage'
+import FavoritePage from './pages/FavoritePage'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <h1 className='flex justify-center font-extrabold text-blue-950'>HI</h1>
-    </>
+    <div className='flex'>
+      <Sidebar/>
+      <Routes>
+        <Route path='/' element = {<HomePage/>}/>
+        <Route path='/favorites' element = {<FavoritePage/>}/>
+      </Routes>
+    </div>
   )
 }
 
